@@ -1,41 +1,20 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
-export default {
-  content: [],
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
-      colors: {
-        blue: "#2CBCE9",
-        red: "#DC4492",
-        yellow:"#FDCC49",
-        grey: "#ededed",
-        "deep-blue": "#010026",
-        "dark-grey": "#757575",
-        "opaque-black": "rgba(0,0,0,0.25)"
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      backgroundImage: (theme) => ({
-        "gradient-rainbow":
-          "linear-gradient(81.66deg, #00B5EE 7.21%. #FF45A4 45.05%, #FFBA00 78.07%)",
-        "gradient-rainblue":
-          "linear-gradient(90deg, #24CBFF 14.53%. #FC59FF 69.36%, #FFBD0C 117.73%)",
-      }),
-      fontFamily: {
-        playfair: ["Playfair Display", "serif"],
-        opensans: ["Open Sans", "serif"]
-      },
-      content: {
-        brush: "url('./assets/brush.png)",
-        person1: "url('./assets/person_1.png)",
-        person2: "url('./assets/person_2.png)",
-        person3: "url('./assets/person_3.png)",
-      }
     },
-    screens: {
-      xs: "480px",
-      sm: "768px",
-      md: "1060px"
-    }
   },
   plugins: [],
-} satisfies Config
-
+};
+export default config;
