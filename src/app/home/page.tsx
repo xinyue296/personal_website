@@ -1,6 +1,8 @@
 const Home = () => {
   return (
-    <div className="font-['La_Belle_Aurore']">Home</div>
+    <main className="text-amber-600 dark:text-amber-100">
+      Main Content
+    </main>
   )
 }
 
