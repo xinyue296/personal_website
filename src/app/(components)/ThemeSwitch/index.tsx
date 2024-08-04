@@ -19,6 +19,7 @@ const ThemeSwitch = () => {
 
   return (
     <button
+        className="px-3 py-3 rounded-full hover:bg-stone-300 dark:hover:bg-stone-600"
         onClick={handleThemeChange}
     >
     { enabled ? (
