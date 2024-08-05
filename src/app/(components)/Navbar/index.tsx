@@ -1,36 +1,35 @@
 import React from "react";
 import ThemeSwitch from "../ThemeSwitch";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 
 const Navbar = () => {
   const flexBetween = "flex items-center justify-between";
+  const iconColors =
+    "text-stone-600 hover:text-stone-400 dark:text-stone-400 dark:hover:text-stone-600";
 
   return (
-    <nav
-    // className="flex justify-between mx-8 my-16"
-    >
-      <div className={`${flexBetween} top-0 z-30 w-full pt-16 pb-8`}>
-        {/* innerdiv: the container of components in navbar, width relative the parent div*/}
-        <div className={`${flexBetween} mx-auto w-3/4 md:w-5/6 lg:w-11/12`}>
-          {/* Logo */}
-          <div className="font-['La_Belle_Aurore'] text-4xl lg:text-5xl xl:text-6xl text-stone-600 dark:text-stone-300">
+    <nav className="top-0 z-30 w-full pt-16 pb-8">
+      <div className={`${flexBetween} mx-auto w-full`}>
+        {/* Logo */}
+        <Link href={"/home"}>
+          <p className="font-['La_Belle_Aurore'] text-5xl xl:text-6xl text-stone-600 dark:text-stone-300 hover:text-stone-400 dark:hover:text-stone-500 md:ml-12">
             Cindy.T
-          </div>
-          <div className="hidden md:flex m-4 font-light text-sm md:text-lg lg:text-xl xl:text-2xl text-stone-700 dark:text-stone-300 gap-6 lg:gap-12">
-            <p>About</p>
-            <p>Projects</p>
-            <p>Resume</p>
-            <p>Contact</p>
-          </div>
-          <div className="my-4 mr-2 flex gap-4">
-            <button
-              className="md:hidden px-3 py-2 rounded-full hover:bg-stone-300 dark:hover:bg-stone-600"
-              onClick={()=>{}}
-            >
-              <Menu className="cursor-pointer text-stone-600 dark:text-stone-400"  size={24} />
-            </button>
-            <ThemeSwitch />
-          </div>
+          </p>
+        </Link>
+        {/* Menu in words */}
+        <div className="hidden md:mr-8 lg:mr-16 md:flex font-light text-base md:text-base xl:text-lg 4xl:text-2xl text-stone-700 dark:text-stone-300 md:gap-8 lg:gap-14">
+          <Link href={"/about"} className="hover:text-stone-400">About</Link>
+          <Link href={"/projects"} className="hover:text-stone-400">Projects</Link>
+          <Link href={"/resume"} className="hover:text-stone-400">Resume</Link>
+          <Link href={"/contact"} className="hover:text-stone-400">Contact</Link>
+        </div>
+        {/* Buttons */}
+        <div className="my-4 md:ml-2 md:mr-12 flex gap-8">
+          <button className="md:hidden" onClick={() => {}}>
+            <Menu className={iconColors} size={24} />
+          </button>
+          <ThemeSwitch />
         </div>
       </div>
     </nav>
