@@ -30,7 +30,7 @@ const RollingText = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.75 }}
-        className="text-amber-600 dark:text-orange-400 font-semibold mt-6"
+        className="text-amber-600 dark:text-orange-400 font-semibold py-2"
       >
         {phrases[index]}
       </motion.p>

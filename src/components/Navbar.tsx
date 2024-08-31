@@ -18,7 +18,10 @@ const Navbar = () => {
           </p>
         </Link>
         {/* Menu in words */}
-        <div className="hidden md:mr-8 lg:mr-16 md:flex font-light text-base md:text-base xl:text-lg 4xl:text-2xl text-stone-700 dark:text-stone-300 md:gap-8 lg:gap-14">
+        <div className="hidden md:mr-8 lg:mr-16 md:flex font-light text-xs md:text-base xl:text-lg 4xl:text-2xl text-stone-700 dark:text-stone-300 md:gap-8 lg:gap-14">
+          <Link href={"/home"} className="hover:text-stone-400">
+            Home
+          </Link>
           <Link href={"/about"} className="hover:text-stone-400">
             About
           </Link>

@@ -11,23 +11,22 @@ import RollingText from "@/components/RollingText";
 const Home = () => {
   return (
     <div className="content-center h-full flex flex-col">
-      <div className="w-full h-3/4 lg:h-full flex flex-col lg:flex-row items-center justify-around lg:justify-between">
+      <div className="w-full h-3/4 lg:h-full flex flex-col lg:flex-row items-center justify-around">
         {/* Photo Section */}
-        <div className="w-full flex justify-center mx-8 md:mx-12 lg:mx-16">
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start mx-8">
           <Image
             src="/(assets)/cindy_profile_1.jpg"
             alt="Picture of Cindy"
-            width={200}  // Default size for small screens
-            height={200} // Default size for small screens
+            width={300} // Default size for small screens
+            height={300} // Default size for small screens
             quality={100}
-            className="hover:scale-105 duration-200 rounded-full w-64 lg:w-80" // Responsive width
+            className="hover:scale-105 duration-200 rounded-full w-64 lg:w-96" // Responsive width
           />
         </div>
 
-
         {/* Text Section */}
-        <div className="w-full text-center lg:text-left hover:scale-105 duration-200 mx-8">
-          <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-bold text-stone-700 dark:text-stone-300 mt-4 md:mt-6">
+        <div className="w-full flex flex-col text-center lg:text-left hover:scale-105 duration-200 mx-8">
+          <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-bold text-stone-700 dark:text-stone-300 mt-2 md:mt-4">
             Hey, I’m Cindy,
           </h1>
           {/* Rolling text */}
