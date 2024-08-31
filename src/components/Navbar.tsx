@@ -1,5 +1,5 @@
 import React from "react";
-import ThemeSwitch from "../ThemeSwitch";
+import ThemeSwitch from "./ThemeSwitch";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 
@@ -19,10 +19,18 @@ const Navbar = () => {
         </Link>
         {/* Menu in words */}
         <div className="hidden md:mr-8 lg:mr-16 md:flex font-light text-base md:text-base xl:text-lg 4xl:text-2xl text-stone-700 dark:text-stone-300 md:gap-8 lg:gap-14">
-          <Link href={"/about"} className="hover:text-stone-400">About</Link>
-          <Link href={"/projects"} className="hover:text-stone-400">Projects</Link>
-          <Link href={"/resume"} className="hover:text-stone-400">Resume</Link>
-          <Link href={"/contact"} className="hover:text-stone-400">Contact</Link>
+          <Link href={"/about"} className="hover:text-stone-400">
+            About
+          </Link>
+          <Link href={"/projects"} className="hover:text-stone-400">
+            Projects
+          </Link>
+          <Link href={"/resume"} className="hover:text-stone-400">
+            Resume
+          </Link>
+          <Link href={"/contact"} className="hover:text-stone-400">
+            Contact
+          </Link>
         </div>
         {/* Buttons */}
         <div className="my-4 md:ml-2 md:mr-12 flex gap-8">

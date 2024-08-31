@@ -2,6 +2,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { ChevronDown } from "lucide-react";
+import RollingText from "@/components/RollingText";
 
 // export const metadata: Metadata = {
 //   title: "Home",
@@ -10,38 +11,39 @@ import { ChevronDown } from "lucide-react";
 const Home = () => {
   return (
     <div className="content-center h-full flex flex-col">
-      <main className="w-full h-3/4 lg:h-full flex flex-col lg:flex-row items-center justify-around lg:justify-between">
+      <div className="w-full h-3/4 lg:h-full flex flex-col lg:flex-row items-center justify-around lg:justify-between">
         {/* Photo Section */}
-        <div className="lg:w-auto mx-12">
+        <div className="w-full flex justify-center mx-8 md:mx-12 lg:mx-16">
           <Image
             src="/(assets)/cindy_profile_1.jpg"
             alt="Picture of Cindy"
-            width={300}
-            height={300}
+            width={200}  // Default size for small screens
+            height={200} // Default size for small screens
             quality={100}
-            className="hover:scale-105 duration-200 rounded-full w-full"
+            className="hover:scale-105 duration-200 rounded-full w-64 lg:w-80" // Responsive width
           />
         </div>
 
+
         {/* Text Section */}
-        <div className="w-auto text-left flex-col mx-12 hover:scale-105 duration-200">
-          <h1 className="text-4xl lg:text-5xl text-stone-600 dark:text-stone-300 font-bold mt-4 md:mt-6">
-            Hey, I’m Cindy!
+        <div className="w-full text-center lg:text-left hover:scale-105 duration-200 mx-8">
+          <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-bold text-stone-700 dark:text-stone-300 mt-4 md:mt-6">
+            Hey, I’m Cindy,
           </h1>
-          <p className="text-lg lg:text-2xl text-stone-500 dark:text-stone-400 font-medium mt-2 md:mt-6">
-            👩‍🎓 Student@UofT | 💻 Aspiring Software Engineer
-            {/* | 🍲 Foodie | 📸 Photography | 🎶 Music */}
-          </p>
-          <p className="text-base lg:text-lg text-stone-400 dark:text-stone-500 mt-6">
-            Welcome to my digital corner! I’m excited to share my journey and
-            creations with you! Feel free to explore and learn more about me :)
+          {/* Rolling text */}
+          <div className="text-4xl md:text-5xl 2xl:text-6xl text-stone-500 dark:text-stone-400 mt-1 md:mt-2">
+            <RollingText />
+          </div>
+          <p className="text-lg lg:text-xl text-stone-600 dark:text-stone-500 mt-6">
+            Welcome to my digital corner!
+            <br className="block md:hidden" /> Feel free to connect or explore.
           </p>
         </div>
-      </main>
+      </div>
       {/* Scroll down icon */}
-      <div className="flex flex-col items-center justify-around lg:my-12">
+      <div className="flex flex-col items-center justify-center w-full my-8">
         <button onClick={() => {}}>
-          <ChevronDown />
+          <ChevronDown className="h-8 w-8 text-stone-800 dark:text-stone-300 animate-[bounce_3s_ease-in-out_infinite]" />
         </button>
       </div>
     </div>
