@@ -2,7 +2,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { ChevronDown } from "lucide-react";
-import RollingText from "@/app/_components/RollingText";
+import RollingText from "@/components/RollingText";
 
 // export const metadata: Metadata = {
 //   title: "Home",

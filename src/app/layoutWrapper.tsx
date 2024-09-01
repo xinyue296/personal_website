@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Navbar from "./_components/Navbar";
+import Navbar from "../components/Navbar";
 
 const LayoutWrapper = ({ children }: { children: React.ReactNode }) => {
   return (

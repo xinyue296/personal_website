@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LayoutWrapper from "./layoutWrapper";
+import Providers from "@/components/providers";
 
 export const metadata: Metadata = {
   title: "Cindy's Website",
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <LayoutWrapper>{children}</LayoutWrapper>
+        <Providers>
+        {children}
+        </Providers>
       </body>
     </html>
   );
