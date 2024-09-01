@@ -1,22 +1,22 @@
-import Home from "@/app/home/page";
-import About from "./about/page";
-import Projects from "./projects/page";
-import Resume from "./resume/page";
-import Contact from "./contact/page";
+'use client'
+import Home from '@/app/home/page'
+import About from './about/page'
+import Projects from './projects/page'
+import Contact from './contact/page'
+import Intro from '@/components/intro/Intro'
 
 export default function App() {
   return (
     <main>
-      <section className="py-24">
-        <div className="container">
-          <h1 className="text-3xl font-bold">My Portfolio</h1>
+      <section className='py-24'>
+        <div className='container max-w-4xl'>
+          <Intro />
         </div>
       </section>
       {/* <Home /> */}
       {/* <About />
       <Projects />
-      <Resume />
       <Contact /> */}
     </main>
-  );
+  )
 }

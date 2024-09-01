@@ -2,11 +2,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { ChevronDown } from "lucide-react";
-import RollingText from "@/components/RollingText";
-
-// export const metadata: Metadata = {
-//   title: "Home",
-// };
+import RollingText from "@/components/intro/RollingText";
 
 const Home = () => {
   return (
@@ -15,7 +11,7 @@ const Home = () => {
         {/* Photo Section */}
         <div className="w-full lg:w-1/2 flex justify-center mx-8">
           <Image
-            src="/(assets)/cindy_profile_1.jpg"
+            src="/assets/cindy_profile_1.jpg"
             alt="Picture of Cindy"
             width={300} // Default size for small screens
             height={300} // Default size for small screens
