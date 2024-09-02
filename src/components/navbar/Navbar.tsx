@@ -23,17 +23,20 @@ const Navbar = () => {
       <nav className='container flex max-w-4xl items-center justify-between'>
         {/* Logo */}
         <div>
-          <Link href={'/'} className='font-serif text-xl text-muted-foreground'>
+          <Link
+            href={'/'}
+            className='font-serif text-xl text-muted-foreground hover:text-card-foreground'
+          >
             C.Tao
           </Link>
         </div>
 
         {/* Navigation */}
-        <ul className='flex items-center gap-6 text-sm font-light text-muted-foreground sm:gap-10'>
+        <ul className='flex items-center gap-6 text-sm font-normal sm:gap-10'>
           {navLinks.map(link => (
             <li
               key={link.path}
-              className='transition-colors hover:text-foreground'
+              className='text-muted-foreground transition-colors hover:text-card-foreground'
             >
               <Link href={link.path}>{link.title}</Link>
             </li>

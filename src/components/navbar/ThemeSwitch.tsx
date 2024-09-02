@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
-import { Sun, Moon } from 'lucide-react'
+import { SunIcon, MoonIcon } from '@radix-ui/react-icons'
 import { Button } from '../ui/button'
 
 const ThemeSwitch = () => {
@@ -27,9 +27,9 @@ const ThemeSwitch = () => {
       }}
     >
       {resolvedTheme === 'light' ? (
-        <Sun className='size-4 text-amber-500' />
+        <SunIcon className='size-4 text-amber-500' />
       ) : (
-        <Moon className='size-4 text-blue-200' />
+        <MoonIcon className='size-4 text-blue-200' />
       )}
 
       <span className='sr-only'>ThemeSwitch: Light/Dark</span>
