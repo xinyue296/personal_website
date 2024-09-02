@@ -13,7 +13,7 @@ const Intro = () => {
         <div className='relative flex shrink-0 items-center'>
           <Image
             className='justify-center rounded-full duration-200 hover:scale-105'
-            src='/assets/cindy_profile_1.jpg'
+            src='/assets/intro/cindy_profile_1.jpg'
             alt='Photo of Cindy'
             width={175}
             height={175}
