@@ -23,7 +23,7 @@ const Navbar = () => {
       <nav className='container flex max-w-4xl items-center justify-between'>
         {/* Logo */}
         <div>
-          <Link href={'/'} className='font-serif text-xl'>
+          <Link href={'/'} className='font-serif text-xl text-muted-foreground'>
             C.Tao
           </Link>
         </div>
