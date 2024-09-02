@@ -62,20 +62,29 @@
   :root {
     --background: 218 32% 100%;
     --foreground: 218 5% 10%;
+
     --card: 218 32% 100%;
     --card-foreground: 218 5% 15%;
+
     --popover: 218 32% 100%;
     --popover-foreground: 218 95% 10%;
+
     --primary: 218 34% 36%;
     --primary-foreground: 0 0% 100%;
+
     --secondary: 218 30% 90%;
     --secondary-foreground: 0 0% 0%;
+
     --muted: 180 30% 95%;
     --muted-foreground: 218 5% 40%;
-    --accent: 180 30% 90%;
+
+    /* --accent: 180 30% 90%; */
+    --accent: 220 19% 94%;
     --accent-foreground: 218 5% 15%;
+
     --destructive: 0 50% 50%;
     --destructive-foreground: 218 5% 100%;
+
     --border: 218 30% 82%;
     --input: 218 30% 50%;
     --ring: 218 34% 36%;
@@ -84,20 +93,29 @@
   .dark {
     --background: 218 32% 10%;
     --foreground: 218 5% 100%;
+
     --card: 218 32% 10%;
     --card-foreground: 218 5% 100%;
+
     --popover: 218 32% 5%;
     --popover-foreground: 218 5% 100%;
+
     --primary: 218 34% 36%;
     --primary-foreground: 0 0% 100%;
+
     --secondary: 218 30% 20%;
     --secondary-foreground: 0 0% 100%;
+
     --muted: 180 30% 25%;
     --muted-foreground: 218 5% 65%;
-    --accent: 180 30% 25%;
+
+    /* --accent: 180 30% 25%; */
+    --accent: 218 26% 42%;
     --accent-foreground: 218 5% 95%;
+
     --destructive: 0 50% 50%;
     --destructive-foreground: 218 5% 100%;
+
     --border: 218 30% 50%;
     --input: 218 30% 50%;
     --ring: 218 34% 36%;

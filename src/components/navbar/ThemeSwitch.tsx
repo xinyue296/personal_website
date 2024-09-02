@@ -20,12 +20,11 @@ const ThemeSwitch = () => {
 
   return (
     <Button
-      size='sm'
+      size='icon'
       variant='ghost'
       onClick={() => {
         setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
       }}
-
     >
       {resolvedTheme === 'light' ? (
         <Sun className='size-4 text-amber-500' />
