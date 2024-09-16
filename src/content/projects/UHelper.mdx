@@ -1,0 +1,62 @@
+---
+  title: UHelper
+  summary: A discord bot named UHelper powered by Java Discord Api.
+  image: /assets/projects/UHelper.png
+  author: 'Cindy Tao'
+  publishedAt: '2024-09-01'
+---
+
+[UHelper](https://github.com/christianjokhaji/UHelper) is a Discord bot created
+for our CSC207 group project at the University of Toronto. It leverages the Java
+Discord API to assit students with time management, wellness, and study
+routines.
+
+## Technologies
+
+- [Java Discord API(JDA)](https://github.com/discord-jda/JDA): This is the heart
+  of our bot. It provides a highly customizable interface for bot interactions,
+  allowing us to build and manage our use cases effectively.
+- [EDAMAM API](https://www.edamam.com/): We utilize this API to fetch recipes
+  from across the web, offering personalized options and nutritional
+  information. It is especially useful for users who want to keep a healthy
+  diet.
+- Amazon EC2 & PM2: For continuous cloud hosting of the bot.
+
+## Highlights
+
+My contributions mainly focused on implementing one of the core use case - generating
+recipe suggestions with EDAMAM API and setting up bot hosting. 
+
+Here’s a closer look at my specific contributions:
+
+- **Recipe Pagination**: Developed a paginator template to overcome Discord's
+  25-embed limit, allowing users to navigate recipe suggestions via buttons.
+  This solution also enhanced the UHelper Wiki, enabling smoother command
+  exploration.
+
+- **Command Manager**: The bot’s commands were refactored using a Command
+  Manager Class, organizing them by feature. This improved the structure, making
+  the code cleaner and easier to maintain for future updates.
+
+- **Cloud Hosting**: Took the initiative to explore cloud hosting beyond the
+  course scope by setting up Amazon EC2 with PM2, ensuring 24/7 uptime for the
+  bot. This scalable solution streamlined the hosting process and removed the
+  need for manual interventions. Detailed and user-friendly hosting guide is
+  also created to help the entire team manage and maintain the bot effectively.
+  This process not only enhanced my technical skills but also fostered
+  collaboration as I shared my knowledge with teammates to ensure smooth
+  operations and collaborations.
+
+While I was dedicated to these areas, my brilliant teammates made significant
+contributions in other crucial aspects of the bot. They worked on developing
+additional features and managing the core functionalities such as event
+scheduling, notifications, and study assistance tools. Their efforts enabled
+users to set up exam and assignment reminders, utilize study quizzes, improve
+time management with Pomodoro timers as well as playing mini games for fun.
+
+## Conclusion
+
+Contributing to UHelper gave me hands-on experience with Java, API integration,
+AWS, and technical writing. I really enjoyed collaborating with my team on this
+project—we brainstormed, built, and tested features together, which made the
+whole experience both fun and rewarding.

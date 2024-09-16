@@ -19,13 +19,13 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <header className='bg-background.75 fixed inset-x-0 top-0 z-50 py-6 backdrop-blur-sm'>
+    <header className='bg-card/85 fixed inset-x-0 top-0 z-50 py-6'>
       <nav className='container flex max-w-4xl items-center justify-between'>
         {/* Logo */}
         <div>
           <Link
             href={'/'}
-            className='font-serif text-xl text-muted-foreground hover:text-card-foreground'
+            className='font-serif text-xl text-bold text-muted-foreground hover:text-card-foreground'
           >
             C.Tao
           </Link>
@@ -36,7 +36,7 @@ const Navbar = () => {
           {navLinks.map(link => (
             <li
               key={link.path}
-              className='text-muted-foreground transition-colors hover:text-card-foreground'
+              className='text-semibold text-muted-foreground transition-colors hover:text-card-foreground'
             >
               <Link href={link.path}>{link.title}</Link>
             </li>

@@ -7,7 +7,7 @@ const ProjectsPage = async () => {
   const projects = await getProjects()
 
   return (
-    <section className='pb-24 pt-40'>
+    <section className='py-24'>
       <div className='container max-w-4xl'>
         <Link
           href='/'

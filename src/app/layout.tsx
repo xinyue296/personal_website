@@ -14,8 +14,8 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Cindy's Website",
-  description: "Welcome to Cindy's Website"
+  title: "Cindy | Personal Portfolio",
+  description: "Cindy Tao is a computer science student with a focus on software engineering, based in Toronto."
 }
 
 export default function RootLayout({

@@ -30,7 +30,7 @@ export default async function Project({
   const { title, image, author, publishedAt } = metadata
 
   return (
-    <section className='pb-24 pt-32'>
+    <section className='py-24'>
       <div className='container max-w-3xl'>
         <Link
           href='/projects'
@@ -58,7 +58,7 @@ export default async function Project({
           </p>
         </header>
 
-        <main className='prose dark:prose-invert mt-16'>
+        <main className='prose mt-16 dark:prose-invert'>
           <MDXContent source={content} />
         </main>
       </div>

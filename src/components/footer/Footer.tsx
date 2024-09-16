@@ -1,9 +1,9 @@
 import React, { SVGProps } from 'react'
 
-const socials = [
+export const socials = [
   {
     name: 'LinkedIn',
-    href: '#',
+    href: 'https://www.linkedin.com/in/cindytao-xy',
     icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
       <svg fill='currentColor' viewBox='0 0 448 512' {...props}>
         <path
@@ -15,7 +15,7 @@ const socials = [
   },
   {
     name: 'GitHub',
-    href: '#',
+    href: 'https://github.com/xinyue296',
     icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
       <svg fill='currentColor' viewBox='0 0 24 24' {...props}>
         <path
@@ -25,7 +25,7 @@ const socials = [
         />
       </svg>
     )
-  },
+  }
   // {
   //   name: 'Instagram',
   //   href: '#',

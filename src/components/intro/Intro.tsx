@@ -27,9 +27,9 @@ const Intro = () => {
             <h1 className='title no-underline'>Hey, I&#39;m Cindy,</h1>
             <RollingText />
             <p className='my-2 font-light text-muted-foreground'>
-              I&#39;m a software engineer based in Toronto, Canada. I&#39;m
-              passionate about learning new technologies. Welcome to my digital
-              corner!
+              Welcome to my digital corner! I&#39;m a computer science student
+              with a focus on software engineering, based in Toronto, Canada.
+              Feel free to explore or connect!
             </p>
           </div>
           {/* Buttons */}

@@ -133,6 +133,17 @@
   .title {
     @apply font-serif text-3xl font-bold underline decoration-border/75 decoration-2 underline-offset-8;
   }
+  .subtitle {
+    @apply font-serif text-2xl font-semibold underline decoration-border/75 decoration-2 underline-offset-8;
+  }
+  .sectitle {
+    @apply font-serif text-xl font-semibold text-primary underline decoration-border/45 decoration-2 underline-offset-4;
+  }
+
+  .dark .sectitle {
+    @apply text-slate-300;
+  }
+
   .prose pre {
     @apply overflow-x-auto rounded-lg bg-accent px-5 py-4 text-sm;
   }
@@ -147,6 +158,27 @@
   }
 
   .prose code span {
-    @apply font-medium;
+    @apply rounded bg-secondary px-1 py-0.5 font-medium text-primary;
+  }
+
+  .dark code span {
+    @apply text-foreground;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose ul,
+  .prose strong,
+  .prose a {
+    @apply text-foreground; /* Adjust for normal mode */
+  }
+
+  .prose a {
+    @apply no-underline hover:text-primary;
+  }
+
+  .dark .prose p {
+    @apply text-white;
   }
 }

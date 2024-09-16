@@ -1,9 +1,10 @@
 import Intro from '@/components/intro/Intro'
+import RecentProjects from '@/components/intro/RecentProjects'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 
 export default function App() {
-  const content = `
-  # This is a markdown heading`
+  // const content = `
+  // # This is a markdown heading`
 
   return (
     <main>
@@ -11,7 +12,8 @@ export default function App() {
         <div className='container max-w-4xl'>
           <Intro />
 
-          <MDXRemote source={content} />
+          {/* <MDXRemote source={content} /> */}
+          <RecentProjects />
         </div>
       </section>
     </main>
