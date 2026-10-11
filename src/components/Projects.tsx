@@ -14,7 +14,7 @@ export default function Projects({
       {projects.map(project => (
         <li key={project.slug} className='group relative'>
           <Link href={`/projects/${project.slug}`}>
-            {project.image && (
+            {project.image ? (
               <div className='h-64 w-full overflow-hidden sm:h-48'>
                 <Image
                   src={project.image}
@@ -22,6 +22,12 @@ export default function Projects({
                   fill
                   className='rounded-xl object-cover object-center transition-transform duration-500 group-hover:scale-105'
                 />
+              </div>
+            ) : (
+              <div className='flex h-64 w-full items-center justify-center overflow-hidden rounded-xl border border-muted bg-gradient-to-br from-muted/60 to-background px-6 sm:h-48'>
+                <span className='text-center font-serif text-2xl font-semibold text-cyan-600'>
+                  {project.title}
+                </span>
               </div>
             )}
 
