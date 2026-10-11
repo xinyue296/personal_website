@@ -26,10 +26,13 @@ const Intro = () => {
           <div className='my-4 items-start'>
             <h1 className='title no-underline'>Hey, I&#39;m Cindy,</h1>
             <RollingText />
-            <p className='my-2 font-light text-muted-foreground'>
-              Welcome to my digital corner! I&#39;m a computer science student
-              with a focus on software engineering, based in Toronto, Canada.
-              Feel free to explore or connect!
+            <p className='my-2 max-w-xl font-light text-muted-foreground'>
+              Welcome to my digital corner! I&#39;m a computer science and
+              statistics student at the University of Toronto, in my final
+              year. I spent sixteen months building backend and systems work
+              at a regulated fintech, and I like the parts of a system that
+              only get interesting under load. Feel free to explore or
+              connect!
             </p>
           </div>
           {/* Buttons */}
@@ -38,7 +41,7 @@ const Intro = () => {
               <Link href='/contact'>Let&apos;s Connect!</Link>
             </Button>
             <Button variant='secondary' onClick={() => {}}>
-              <Link href='/'>Download CV</Link>
+              <Link href='/cv'>View CV</Link>
             </Button>
           </div>
         </div>

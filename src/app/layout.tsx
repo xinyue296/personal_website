@@ -14,8 +14,15 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "Cindy | Personal Portfolio",
-  description: "Cindy Tao is a computer science student with a focus on software engineering, based in Toronto."
+  title: 'Cindy Tao | Software Engineer',
+  description:
+    'Xinyue (Cindy) Tao is a computer science and statistics student at the University of Toronto working on systems, performance, and full-stack engineering. Sixteen months building event-driven pipelines, APIs, and internal tooling at a regulated fintech.',
+  openGraph: {
+    title: 'Cindy Tao | Software Engineer',
+    description:
+      'Software engineer in Toronto working on systems, performance, and full-stack engineering. Graduating May 2027.',
+    type: 'website'
+  }
 }
 
 export default function RootLayout({
