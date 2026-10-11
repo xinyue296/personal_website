@@ -35,9 +35,6 @@ export default function Experience() {
       <div className='relative border-l border-muted pl-6 ml-2 sm:ml-4 flex flex-col gap-12'>
         {experiences.map((exp, index) => (
           <div key={index} className='relative group'>
-            {/* Dot on Timeline */}
-            <div className='absolute -left-[31px] top-1.5 h-4.5 w-4.5 rounded-full border border-muted bg-background group-hover:border-cyan-600 transition-colors duration-300' />
-            
             <div className='flex flex-col md:flex-row md:justify-between md:items-start gap-1 mb-2'>
               <div>
                 <h3 className='text-lg font-semibold text-foreground group-hover:text-cyan-600 transition-colors duration-300'>
