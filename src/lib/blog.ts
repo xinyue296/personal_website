@@ -2,7 +2,7 @@ import fs from 'fs/promises'
 import path from 'path'
 import matter from 'gray-matter'
 
-const rootDirectory = path.join(process.cwd(), 'src', 'content', 'writing')
+const rootDirectory = path.join(process.cwd(), 'src', 'content', 'blog')
 
 export type Post = {
   metadata: PostMetadata

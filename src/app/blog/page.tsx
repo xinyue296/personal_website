@@ -1,16 +1,16 @@
 import Link from 'next/link'
 import { ArrowLeftIcon } from '@radix-ui/react-icons'
 
-import { getPosts } from '@/lib/writing'
+import { getPosts } from '@/lib/blog'
 import { formatDate } from '@/lib/utils'
 
 export const metadata = {
-  title: 'Writing | Cindy Tao',
+  title: 'Blog | Cindy Tao',
   description:
     'Essays and reflections on engineering, systems, and what I learned building them.'
 }
 
-export default async function WritingPage() {
+export default async function BlogPage() {
   const posts = await getPosts()
 
   return (
@@ -23,7 +23,7 @@ export default async function WritingPage() {
           <ArrowLeftIcon className='h-5 w-5' />
           <span>Back to main</span>
         </Link>
-        <h1 className='title mb-4'>Writing</h1>
+        <h1 className='title mb-4'>Blog</h1>
         <p className='mb-12 max-w-2xl font-light text-muted-foreground'>
           Notes on the things I build and what they taught me.
         </p>
@@ -37,7 +37,7 @@ export default async function WritingPage() {
             {posts.map(post => (
               <li key={post.slug}>
                 <Link
-                  href={`/writing/${post.slug}`}
+                  href={`/blog/${post.slug}`}
                   className='group block rounded-xl border border-muted bg-card/40 p-6 transition-colors hover:border-cyan-600/50'
                 >
                   <h2 className='font-serif text-xl font-semibold text-foreground transition-colors group-hover:text-cyan-600'>
