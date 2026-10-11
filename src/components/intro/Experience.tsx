@@ -30,14 +30,14 @@ const experiences: ExperienceItem[] = [
 
 export default function Experience() {
   return (
-    <section className='pb-24'>
+    <section className='pb-12'>
       <h2 className='subtitle mb-8'>Experience</h2>
-      <div className='relative border-l border-muted pl-6 ml-2 sm:ml-4 flex flex-col gap-12'>
+      <div className='relative ml-2 flex flex-col gap-12 border-l border-muted pl-6 sm:ml-4'>
         {experiences.map((exp, index) => (
-          <div key={index} className='relative group'>
-            <div className='flex flex-col md:flex-row md:justify-between md:items-start gap-1 mb-2'>
+          <div key={index} className='group relative'>
+            <div className='mb-2 flex flex-col gap-1 md:flex-row md:items-start md:justify-between'>
               <div>
-                <h3 className='text-lg font-semibold text-foreground group-hover:text-cyan-600 transition-colors duration-300'>
+                <h3 className='text-lg font-semibold text-foreground transition-colors duration-300 group-hover:text-cyan-600'>
                   {exp.role}
                 </h3>
                 <div className='text-sm font-medium text-muted-foreground'>
@@ -46,7 +46,7 @@ export default function Experience() {
                       href={exp.link}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='hover:underline hover:text-foreground'
+                      className='hover:text-foreground hover:underline'
                     >
                       {exp.company}
                     </a>
@@ -57,12 +57,12 @@ export default function Experience() {
                   <span>{exp.location}</span>
                 </div>
               </div>
-              <span className='text-xs font-light text-muted-foreground bg-muted/30 px-2.5 py-1 rounded-full border border-muted w-fit md:mt-1'>
+              <span className='w-fit rounded-full border border-muted bg-muted/30 px-2.5 py-1 text-xs font-light text-muted-foreground md:mt-1'>
                 {exp.period}
               </span>
             </div>
 
-            <ul className='list-disc list-outside ml-4 text-sm font-light text-muted-foreground space-y-2 mt-3 leading-relaxed'>
+            <ul className='ml-4 mt-3 list-outside list-disc space-y-2 text-sm font-light leading-relaxed text-muted-foreground'>
               {exp.description.map((desc, i) => (
                 <li key={i}>{desc}</li>
               ))}

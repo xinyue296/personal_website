@@ -30,8 +30,8 @@ const About = () => {
             University of Toronto. I did not start out as an engineer. What
             pulled me in was WasedaTime, a student-run campus web app, where I
             joined as a frontend developer and ended up as its product manager
-            too. That is where I learned I care as much about building the
-            right thing as about building it well.
+            too. That is where I learned I care as much about building the right
+            thing as about building it well.
           </p>
           <p className='my-2 font-normal text-muted-foreground'>
             From May 2025 to August 2026 I was a software engineer co-op at{' '}
@@ -45,12 +45,12 @@ const About = () => {
             </a>
             , a fintech building custody and stablecoin infrastructure for
             institutions. Over sixteen months I went from validating other
-            people&rsquo;s fixes to owning features end to end. I
-            re-architected a transaction export that could not finish its
-            largest jobs, traced data inconsistencies back to their root
-            causes, automated invoicing for the finance team, migrated signing
-            operations to a new platform, and built the event pipeline that
-            lets two platforms share one audit trail.
+            people&rsquo;s fixes to owning features end to end. I re-architected
+            a transaction export that could not finish its largest jobs, traced
+            data inconsistencies back to their root causes, automated invoicing
+            for the finance team, migrated signing operations to a new platform,
+            and built the event pipeline that lets two platforms share one audit
+            trail.
           </p>
           <p className='my-2 font-normal text-muted-foreground'>
             The thread through most of it is systems that worked when they were
@@ -64,12 +64,11 @@ const About = () => {
         <div className='my-8 items-start'>
           <h2 className='sectitle text-primary'>Now</h2>
           <p className='my-2 font-normal text-muted-foreground'>
-            I am in my final year at U of T, taking Computer Systems
-            Programming and building two projects. ChartProof is my capstone
-            with three teammates, an independent accuracy checker for AI
-            medical scribes. The AI Marketing Agent is a multi-tenant agentic
-            RAG platform built with a collaborator, where I own product
-            direction and evaluation.
+            I am in my final year at U of T, taking Computer Systems Programming
+            and building two projects. ChartProof is my capstone with three
+            teammates, an independent accuracy checker for AI medical scribes.
+            The AI Marketing Agent is a multi-tenant agentic RAG platform built
+            with a collaborator, where I own product direction and evaluation.
           </p>
           <p className='my-2 font-normal text-muted-foreground'>
             I am looking for full-time software engineering roles starting in
@@ -81,7 +80,7 @@ const About = () => {
         </div>
 
         {/* Experience Timeline */}
-        <div className='my-12'>
+        <div className='my-8'>
           <Experience />
         </div>
 
@@ -92,10 +91,10 @@ const About = () => {
             Most of my production work was in TypeScript and Node.js on
             PostgreSQL, with AWS around it. Lambda, Step Functions, SQS, and S3
             for pipelines, and Terraform for infrastructure. I picked up Go and
-            NATS JetStream on the job to build an event-driven service, and I
-            am comfortable reading and writing both. I still build frontends
-            when a project needs one, mostly React, Next.js, and Tailwind, and
-            this site is one of them.
+            NATS JetStream on the job to build an event-driven service, and I am
+            comfortable reading and writing both. I still build frontends when a
+            project needs one, mostly React, Next.js, and Tailwind, and this
+            site is one of them.
           </p>
           <p className='my-2 font-normal text-muted-foreground'>
             Closer to the metal, I work in C, C++, and MIPS assembly through my
@@ -119,9 +118,9 @@ const About = () => {
           <p className='my-2 font-normal text-muted-foreground'>
             I paddled with a Toronto dragon boat team in 2026, training three or
             more times a week and racing at the Toronto Islands regatta and the
-            Can-Am Cup in Montreal. I joined to push my fitness and step
-            outside my social comfort zone, and it turned out to be one of the
-            most fun parts of my year.
+            Can-Am Cup in Montreal. I joined to push my fitness and step outside
+            my social comfort zone, and it turned out to be one of the most fun
+            parts of my year.
           </p>
           <p className='my-2 font-normal text-muted-foreground'>
             I also sing with the Hart House Singers. When I need to unwind I
