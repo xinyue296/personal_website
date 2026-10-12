@@ -14,6 +14,25 @@ export async function generateStaticParams() {
   return slugs
 }
 
+export async function generateMetadata({
+  params
+}: {
+  params: { slug: string }
+}) {
+  const project = await getProjectBySlug(params.slug)
+  if (!project) {
+    return { title: 'Projects | Cindy Tao' }
+  }
+
+  const { title, summary, noindex } = project.metadata
+
+  return {
+    title: `${title} | Cindy Tao`,
+    description: summary,
+    ...(noindex ? { robots: { index: false, follow: true } } : {})
+  }
+}
+
 export default async function Project({
   params
 }: {
