@@ -1,17 +1,18 @@
-import Home from "@/app/home/page";
-import About from "./about/page";
-import Projects from "./projects/page";
-import Resume from "./resume/page";
-import Contact from "./contact/page";
+import Intro from '@/components/intro/Intro'
+import Experience from '@/components/intro/Experience'
+import RecentProjects from '@/components/intro/RecentProjects'
 
 export default function App() {
   return (
-    <main>    
-      <Home />
-      <About />
-      <Projects />
-      <Resume />
-      <Contact />
+    <main>
+      <section className='py-24'>
+        <div className='container max-w-4xl'>
+          <Intro />
+          <Experience />
+          <RecentProjects />
+        </div>
+      </section>
     </main>
-  );
+  )
 }
+
