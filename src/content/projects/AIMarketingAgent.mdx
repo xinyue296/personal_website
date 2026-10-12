@@ -1,0 +1,29 @@
+---
+  title: AI Marketing Agent
+  summary: A multi-tenant agentic RAG platform for marketing teams. I am building its evaluation harness.
+  author: 'Cindy Tao'
+  publishedAt: '2026-10-01'
+---
+
+*In progress. This page grows as the work lands.*
+
+The AI Marketing Agent helps employees turn their company's own documents into marketing strategy and copy. My collaborator started the platform in spring 2026, and I joined in August as the second engineer.
+
+## How it works
+
+A company's internal documents are split into chunks, embedded, and stored in a ChromaDB collection that belongs only to that company. Each document carries an access tier, so a sensitive executive deck never reaches someone without clearance.
+
+When a user asks a question, a LangGraph supervisor decides which agent should act next. A researcher retrieves the documents that user is allowed to see, a strategist turns them into a plan, a copywriter drafts assets, and a brand reviewer sends weak copy back for another pass.
+
+## What I am building
+
+The evaluation harness. Right now the system can be checked by hand, one query at a time. I want every change to be scored the same way, every time, on two questions.
+
+- **Does retrieval find the right documents?** Relevance scores on a fixed set of test queries per tenant.
+- **Does access control hold?** Tests that a lower-clearance user never receives a restricted document, at any step of the agent loop.
+
+I picked this piece because the platform's whole promise depends on the second question. A marketing tool that leaks an M&A deck to an intern is worse than no tool at all.
+
+## Stack
+
+Python, LangGraph, ChromaDB, OpenAI embeddings.

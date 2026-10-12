@@ -75,7 +75,7 @@
     --secondary: 218 30% 90%;
     --secondary-foreground: 0 0% 0%;
 
-    --muted: 180 30% 95%;
+    --muted: 218 30% 95%;
     --muted-foreground: 218 5% 40%;
 
     /* --accent: 180 30% 90%; */
@@ -106,7 +106,7 @@
     --secondary: 218 30% 20%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 180 30% 25%;
+    --muted: 218 30% 25%;
     --muted-foreground: 218 5% 65%;
 
     /* --accent: 180 30% 25%; */
@@ -181,4 +181,25 @@
   .dark .prose p {
     @apply text-white;
   }
+}
+
+/* Pixel art must not be smoothed when scaled. */
+img[src*="DrMario-card"],
+img[src*="DrMario-pixelart"],
+img[src*="/projects/drmario/"] {
+  image-rendering: pixelated;
+}
+
+/* Two images in one paragraph read as a pair, so show them side by side.
+   Browsers without :has() fall back to the normal stacked layout. */
+.prose p:has(img + img) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+.prose p:has(img + img) img {
+  flex: 1 1 45%;
+  min-width: 220px;
+  margin: 0;
 }

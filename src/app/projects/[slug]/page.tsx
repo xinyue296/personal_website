@@ -3,15 +3,34 @@ import Image from 'next/image'
 
 import { formatDate } from '@/lib/utils'
 import { MDXContent } from '@/components/MDX-content'
-import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { getProjectBySlug, getProjects } from '@/lib/projects'
 import { notFound } from 'next/navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export async function generateStaticParams() {
   const projects = await getProjects()
   const slugs = projects.map(project => ({ slug: project.slug }))
 
   return slugs
+}
+
+export async function generateMetadata({
+  params
+}: {
+  params: { slug: string }
+}) {
+  const project = await getProjectBySlug(params.slug)
+  if (!project) {
+    return { title: 'Projects | Cindy Tao' }
+  }
+
+  const { title, summary, noindex } = project.metadata
+
+  return {
+    title: `${title} | Cindy Tao`,
+    description: summary,
+    ...(noindex ? { robots: { index: false, follow: true } } : {})
+  }
 }
 
 export default async function Project({
@@ -27,18 +46,18 @@ export default async function Project({
   }
 
   const { metadata, content } = project
-  const { title, image, author, publishedAt } = metadata
+  const { title, image, author, publishedAt, pixelated } = metadata
 
   return (
     <section className='py-24'>
       <div className='container max-w-3xl'>
-        <Link
-          href='/projects'
-          className='mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
-        >
-          <ArrowLeftIcon className='h-5 w-5' />
-          <span>Back to projects</span>
-        </Link>
+        <Breadcrumbs
+          items={[
+            { label: 'Main', href: '/' },
+            { label: 'Projects', href: '/projects' },
+            { label: title ?? slug }
+          ]}
+        />
 
         {image && (
           <div className='relative mb-6 h-96 w-full overflow-hidden rounded-lg'>
@@ -46,6 +65,7 @@ export default async function Project({
               src={image}
               alt={title || ''}
               className='object-cover'
+              unoptimized={pixelated}
               fill
             />
           </div>

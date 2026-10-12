@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react'
 
 const RollingText = () => {
   const phrases = [
-    'an enthusiastic learner 🤔',
     'a software engineer 💻',
+    'a systems debugger 🔧',
+    'learning ML 🤖',
     'a curious explorer 🔍',
-    'a UX enthusiast 🎨',
     'a problem solver 💡',
-    'a team player 🤝',
+    'a dragon boat paddler 🐉',
     'a cat person 🐱'
   ]
 
@@ -30,7 +30,7 @@ const RollingText = () => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
         transition={{ duration: 0.75 }}
-        className='py-1 font-serif text-2xl font-semibold text-cyan-600'
+        className='py-1 font-serif text-xl font-semibold text-cyan-600 sm:text-2xl'
       >
         {phrases[index]}
       </motion.p>

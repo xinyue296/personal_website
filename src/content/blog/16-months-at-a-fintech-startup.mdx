@@ -1,0 +1,60 @@
+---
+  title: Seven lessons from sixteen months at a fintech startup
+  summary: What I learned going from validating other people's fixes to owning features end to end.
+  author: 'Cindy Tao'
+  publishedAt: '2026-10-11'
+---
+
+From May 2025 to August 2026 I was a software engineer co-op at [Tetra Digital Group](https://tetradg.com), a fintech building custody and stablecoin infrastructure for institutions. My first months were scoped and test-heavy. By the end I was owning features from the first conversation to the handoff. These are the lessons that got me from one to the other.
+
+## 1. Ask the scaling question before you have the answer
+
+I built the first version of a data export, and it worked well until the data it handled grew past what that design could finish. Rebuilding it taught me plenty about pagination, parallel workers, and queues. The bigger lesson was earlier than that. I had a feeling the volume would grow, and I did not say it out loud at design time because I did not have a full answer yet.
+
+Now I raise the question anyway. "This might not hold at ten times the size" is a useful sentence even without a solution attached.
+
+## 2. Measure before you tune
+
+Rebuilding that export gave me an obvious next instinct, which was to add more workers. More workers did not keep helping. Past a certain point the extra parallelism stopped buying speed and started putting pressure somewhere else.
+
+So I ran it as an experiment instead of a guess. I pushed the concurrency up in steps, watched where the curve flattened, and found the real constraint was not where I assumed. The fix was not a bigger number, it was a limit chosen deliberately and made configurable, with a queue in front to hold the overflow.
+
+The habit I kept is to treat performance work as measurement first. An untested guess about a bottleneck is just a preference.
+
+## 3. Understand the person before the spec
+
+The first project I owned end to end was an automation for our finance team. The written spec and their real workflow did not match. Building to the spec would have been faster and would have produced something nobody wanted to use.
+
+So I spent time learning how they actually worked, pushed back on the parts that did not add up, and got the right people talking before I wrote code. After the release I sat down with them again, wrote down what they still needed, and turned it into a plan for the next iteration. Sometimes ownership means slowing a project down briefly so it lands correctly.
+
+## 4. Find the root cause, even if you do not ship the fix
+
+Some of the hardest bugs I worked on were not in the code I was writing. They were in how data flowed through the system over time, where small inconsistencies accumulated quietly instead of failing loudly.
+
+Tracing them meant writing throwaway scripts to compare what the system believed against what had actually happened, then sorting the differences into patterns until the patterns pointed somewhere. It took patience, a lot of reading data by hand, and a willingness to say "this is not a quick patch."
+
+The fix I proposed was bigger than the time I had left, so it became input to a larger redesign instead. I used to think an investigation only counted if it ended in my own pull request. I do not think that anymore. Naming the cause precisely is the part that saves the next person time.
+
+## 5. Delivery is a team sport
+
+On a migration project with my mentor, we split a large piece of work into small releases we could test on their own, and we reviewed each other's work fast enough that nothing sat waiting. The first release shipped on schedule.
+
+Later, when a new requirement landed while my mentor was away, I switched back from my own project to cover his part and kept product updated on where things stood, so he could focus on the hardest problem when he returned.
+
+## 6. Hiring someone teaches you what you value
+
+I led the hiring for the next co-op with my manager, from screening applications to running the interviews. Writing my own interview questions forced me to decide what a good engineer looks like, and that turned into a useful checklist for myself. Then I got to help mentor the person we hired, and I learned as much from their questions as they did from my answers.
+
+## 7. Treat ambiguity as room to explore
+
+When I started, an unclear request felt like a test I might fail. I did my best work on well-defined tickets, and I felt the most friction when a request was vague or a system was unfamiliar.
+
+Looking back, the projects I am proudest of all started vague. Nobody handed me a design for the export, a spec that matched how finance worked, or a known cause for the data issues. That missing clarity is exactly what gave me room to dig in, try ideas, and shape the answer instead of just executing it. A clear ticket has one right answer. An ambiguous problem lets you find a better question first.
+
+I still like clarity. I have just stopped waiting for someone else to provide it. Now I move toward it myself, by asking the questions early, writing down what I do not know yet, sketching an approach before I am sure of it, and checking in before I get stuck. That is also where most of the fun is.
+
+## What I take with me
+
+I arrived able to execute a clear task. I left able to take an ambiguous problem, measure my way to the real cause, choose an approach, build it, and hand it off cleanly.
+
+Thank you to my manager, my mentor, the product team, and everyone who paired with me, unblocked me, and cheered the wins.

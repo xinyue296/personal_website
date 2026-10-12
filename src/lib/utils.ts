@@ -6,9 +6,12 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(date: string) {
+  // Date-only strings parse as UTC midnight, so render in UTC to avoid
+  // showing the previous day for anyone west of Greenwich.
   return new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'long',
-    year: 'numeric'
+    year: 'numeric',
+    timeZone: 'UTC'
   })
 }

@@ -1,18 +1,14 @@
 import { socials } from '@/components/footer/Footer'
-import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 const ContactPage = () => {
   return (
     <section className='py-24'>
       <div className='container max-w-4xl'>
-        <Link
-          href='/'
-          className='mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
-        >
-          <ArrowLeftIcon className='h-5 w-5' />
-          <span>Back to main</span>
-        </Link>
+        <Breadcrumbs
+          items={[{ label: 'Main', href: '/' }, { label: 'Contact' }]}
+        />
         <h1 className='title mb-12'>Let&apos;s Connect!</h1>
         <p>
           I’d love to hear from you! Whether you have a question, want to
