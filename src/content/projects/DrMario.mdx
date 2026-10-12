@@ -1,0 +1,37 @@
+---
+  title: Dr. Mario in MIPS Assembly
+  summary: A playable Dr. Mario remake in about 3,000 lines of MIPS assembly, with eight extra features.
+  author: 'Cindy Tao'
+  publishedAt: '2024-12-15'
+---
+
+*Computer Organization, University of Toronto, Fall 2024. Solo project. The code stays private because it is coursework, so this page describes the game instead.*
+
+I remade Dr. Mario in MIPS assembly, running on a 64 by 64 bitmap display with keyboard input. There is no game engine, no standard library, and no compiler to lean on. Every pixel is a value written to a memory address, and every function call is a stack frame I set up and tore down myself.
+
+## Playing it
+
+The game opens on a start menu. Press **n** to start and **q** to quit. Capsules drop from the neck of the pill bottle, and you steer them with **a** and **d**, rotate with **w**, and push them down with **s**. Line up four of the same colour in a row or column to clear them, and anything left unsupported falls into place. Clear all four viruses to win. Block the neck of the bottle and it is game over, with an option to retry.
+
+## Beyond the required milestones
+
+On top of the core game I added eight features.
+
+- Gravity, so capsules fall on their own.
+- Gravity that speeds up the longer you play.
+- Game over with a retry option.
+- Pause and resume with **p**, with a pause sign on screen.
+- A side panel previewing the next capsule.
+- A preview queue of the next five capsules.
+- Pixel-art Dr. Mario and viruses on the side panels, drawn pixel by pixel.
+- Hold a capsule with **k** and bring it back later.
+
+## How I built it
+
+Before writing any assembly, I sketched the whole screen on grid paper, with the bottle's exact dimensions, where each panel sits, and the four rotation states of a capsule. In assembly, every coordinate turns into an address calculation, so having the layout on paper first gave me exact numbers to work from.
+
+The game runs as a frame loop. Each frame reads the keyboard, applies the move, advances a gravity counter, checks for matches, and redraws the board. The board lives in memory as a grid, so collision checks, clears, and the cascading drops are all loops over that grid.
+
+## What I took from it
+
+Calling conventions, the stack, and memory-mapped input and output stopped being abstract once I had to manage every one of them myself. It is also the project that made me curious about how software meets hardware, which is why I am taking systems courses this year. And it was genuinely fun.

@@ -1,0 +1,28 @@
+---
+  title: ChartProof
+  summary: An independent accuracy checker for AI medical scribes. ML engineering capstone, team of four.
+  author: 'Cindy Tao'
+  publishedAt: '2026-10-01'
+---
+
+*In progress. ML engineering capstone, University of Toronto, Fall 2026.*
+
+AI medical scribes listen to a doctor's appointment and write the clinical note. They save clinicians real time, and more clinics are adopting them every year. The catch is that the notes are not always right, and the companies selling scribes mostly grade their own accuracy.
+
+ChartProof is our attempt at an independent check, a model that reads a visit transcript and its AI-written note and flags what the note got wrong.
+
+## Why this problem
+
+I wrote our product landscape, surveying the commercial scribes, the frameworks health systems use to evaluate them, and the published research on where these notes go wrong.
+
+Two things stood out. The most common failure is omission, something the visit covered that the note left out, and omissions are the hardest kind for a busy clinician to catch, because you cannot see what is missing. And the work on detecting these errors is largely done by the vendors themselves, which makes the seller the grader.
+
+That second gap is the one we are building into.
+
+## Where it stands
+
+We are at the research and planning stage. My part so far is the landscape work, and next I am helping shape the dataset and the evaluation pipeline.
+
+## Stack
+
+Python. More to come once the pipeline is in place.
