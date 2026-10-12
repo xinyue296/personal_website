@@ -140,18 +140,18 @@ const About = () => {
         <div className='my-8 items-start'>
           <h2 className='sectitle text-primary'>Outside work</h2>
           <p className='my-2 font-normal text-muted-foreground'>
-            I paddled with a Toronto dragon boat team in 2026, training three or
-            more times a week and racing at the Toronto Islands regatta and the
-            Can-Am Cup in Montreal. I joined to push my fitness and step outside
-            my social comfort zone, and it turned out to be one of the most fun
-            parts of my year.
+            This past season, I paddled with a NDUC(Toronto dragon boat team),
+            training three times a week and competing at both the Toronto Island
+            regatta and the Can-Am Cup in Montreal. I joined to stay active and
+            meet new people, and it ended up being one of the best experiences
+            of my year.
           </p>
           <p className='my-2 font-normal text-muted-foreground'>
-            I also sing with the Hart House Singers. When I need to unwind I
-            take photos, walk the city without a plan, or find somewhere near
-            the water.
+            I also sang with the Hart House Singers for a couple of semesters.
+            In my downtime, I like taking photos, wandering the city, playing
+            board games with my partner and friends, hunting down good matcha
+            and ice cream, or hanging out with my cat, Mos.
           </p>
-
           <div className='mt-6 flex flex-wrap gap-3'>
             {photos.map(photo => (
               <Image

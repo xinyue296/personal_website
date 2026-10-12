@@ -57,7 +57,7 @@ export default function Experience() {
                   <span>{exp.location}</span>
                 </div>
               </div>
-              <span className='w-fit rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-light text-muted-foreground dark:border-muted dark:bg-muted/30 md:mt-1'>
+              <span className='w-fit rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-light text-muted-foreground dark:border-secondary dark:bg-secondary/60 md:mt-1'>
                 {exp.period}
               </span>
             </div>
