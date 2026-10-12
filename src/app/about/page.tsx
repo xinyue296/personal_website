@@ -88,7 +88,7 @@ const About = () => {
         <div className='my-8 items-start'>
           <h2 className='sectitle text-primary'>Now</h2>
           <p className='my-2 font-normal text-muted-foreground'>
-            I am in my final year at U of T, taking Computer Systems Programming
+            I am in my final year at UofT, taking Computer Systems Programming
             and building two projects. ChartProof is my capstone with three
             teammates, an independent accuracy checker for AI medical scribes.
             The AI Marketing Agent is a multi-tenant agentic RAG platform built
@@ -107,6 +107,12 @@ const About = () => {
         <div className='my-8'>
           <Experience />
         </div>
+        <Link
+          href='/cv'
+          className='-mt-8 mb-8 inline-flex items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors hover:text-foreground'
+        >
+          <span>Check my full CV</span>
+        </Link>
 
         {/* What I work with */}
         <div className='my-8 items-start'>
@@ -140,11 +146,11 @@ const About = () => {
         <div className='my-8 items-start'>
           <h2 className='sectitle text-primary'>Outside work</h2>
           <p className='my-2 font-normal text-muted-foreground'>
-            This past season, I paddled with a NDUC(Toronto dragon boat team),
-            training three times a week and competing at both the Toronto Island
+            This past season I paddled with NDUC, a UofT dragon boat team,
+            training three times a week and competing at the Toronto Islands
             regatta and the Can-Am Cup in Montreal. I joined to stay active and
-            meet new people, and it ended up being one of the best experiences
-            of my year.
+            meet new people, and it ended up being one of the best parts of my
+            year.
           </p>
           <p className='my-2 font-normal text-muted-foreground'>
             I also sang with the Hart House Singers for a couple of semesters.
