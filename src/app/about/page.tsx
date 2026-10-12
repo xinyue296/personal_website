@@ -1,6 +1,6 @@
-import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 import Experience from '@/components/intro/Experience'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata = {
   title: 'About | Cindy Tao',
@@ -12,13 +12,9 @@ const About = () => {
   return (
     <section className='py-24'>
       <div className='container max-w-4xl'>
-        <Link
-          href='/'
-          className='mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
-        >
-          <ArrowLeftIcon className='h-5 w-5' />
-          <span>Back to main</span>
-        </Link>
+        <Breadcrumbs
+          items={[{ label: 'Main', href: '/' }, { label: 'About' }]}
+        />
         <h1 className='title mb-12'>About</h1>
 
         {/* Journey */}

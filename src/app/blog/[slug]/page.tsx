@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeftIcon } from '@radix-ui/react-icons'
 
 import { formatDate } from '@/lib/utils'
 import { MDXContent } from '@/components/MDX-content'
 import { getPostBySlug, getPosts } from '@/lib/blog'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export async function generateStaticParams() {
   const posts = await getPosts()
@@ -40,13 +40,13 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
     <section className='py-24'>
       <div className='container max-w-3xl'>
-        <Link
-          href='/blog'
-          className='mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
-        >
-          <ArrowLeftIcon className='h-5 w-5' />
-          <span>Back to blog</span>
-        </Link>
+        <Breadcrumbs
+          items={[
+            { label: 'Main', href: '/' },
+            { label: 'Blog', href: '/blog' },
+            { label: title ?? slug }
+          ]}
+        />
 
         <header>
           <h1 className='title'>{title}</h1>

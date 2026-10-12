@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import { ArrowLeftIcon } from '@radix-ui/react-icons'
 
 import { getPosts } from '@/lib/blog'
 import { formatDate } from '@/lib/utils'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata = {
   title: 'Blog | Cindy Tao',
@@ -16,13 +16,9 @@ export default async function BlogPage() {
   return (
     <section className='py-24'>
       <div className='container max-w-4xl'>
-        <Link
-          href='/'
-          className='mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
-        >
-          <ArrowLeftIcon className='h-5 w-5' />
-          <span>Back to main</span>
-        </Link>
+        <Breadcrumbs
+          items={[{ label: 'Main', href: '/' }, { label: 'Blog' }]}
+        />
         <h1 className='title mb-4'>Blog</h1>
         <p className='mb-12 max-w-2xl font-light text-muted-foreground'>
           Notes on the things I build and what they taught me.
