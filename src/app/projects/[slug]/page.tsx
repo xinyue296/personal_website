@@ -46,7 +46,7 @@ export default async function Project({
   }
 
   const { metadata, content } = project
-  const { title, image, author, publishedAt } = metadata
+  const { title, image, author, publishedAt, pixelated } = metadata
 
   return (
     <section className='py-24'>
@@ -65,6 +65,7 @@ export default async function Project({
               src={image}
               alt={title || ''}
               className='object-cover'
+              unoptimized={pixelated}
               fill
             />
           </div>

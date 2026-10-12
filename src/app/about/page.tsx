@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Experience from '@/components/intro/Experience'
 import Breadcrumbs from '@/components/Breadcrumbs'
 
@@ -7,6 +8,33 @@ export const metadata = {
   description:
     'Xinyue (Cindy) Tao is a computer science and statistics student at the University of Toronto working on systems, performance, and full-stack engineering.'
 }
+
+const photos = [
+  {
+    src: '/assets/about/canam-cup.jpg',
+    alt: 'My dragon boat team walking down to the docks before racing at the Can-Am Cup',
+    width: 1200,
+    height: 900
+  },
+  {
+    src: '/assets/about/toronto-islands.jpg',
+    alt: 'Me holding my paddle in the park before the Toronto Islands regatta',
+    width: 900,
+    height: 1200
+  },
+  {
+    src: '/assets/about/mos.jpg',
+    alt: 'Mos, my cat, asleep against my arm',
+    width: 1200,
+    height: 900
+  },
+  {
+    src: '/assets/about/light-installation.jpg',
+    alt: 'A silhouette against a wall of projected flowers at a light installation',
+    width: 1200,
+    height: 901
+  }
+]
 
 const About = () => {
   return (
@@ -123,6 +151,19 @@ const About = () => {
             take photos, walk the city without a plan, or find somewhere near
             the water.
           </p>
+
+          <div className='mt-6 flex flex-wrap gap-3'>
+            {photos.map(photo => (
+              <Image
+                key={photo.src}
+                src={photo.src}
+                alt={photo.alt}
+                width={photo.width}
+                height={photo.height}
+                className='h-48 w-auto rounded-lg object-cover lg:h-40'
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

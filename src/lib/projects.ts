@@ -17,6 +17,8 @@ export type ProjectMetadata = {
   publishedAt?: string
   /** Set in frontmatter to keep a project out of search results. */
   noindex?: boolean
+  /** Pixel art. Skips image optimization so the pixels stay crisp. */
+  pixelated?: boolean
   slug: string
 }
 

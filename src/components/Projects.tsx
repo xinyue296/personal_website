@@ -19,6 +19,7 @@ export default function Projects({
                 <Image
                   src={project.image}
                   alt={project.title || ''}
+                  unoptimized={project.pixelated}
                   fill
                   className='rounded-xl object-cover object-center transition-transform duration-500 group-hover:scale-105'
                 />
