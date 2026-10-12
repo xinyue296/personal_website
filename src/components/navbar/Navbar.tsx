@@ -52,11 +52,13 @@ const Navbar = () => {
 
   return (
     <header className='fixed inset-x-0 top-0 z-50 bg-card/85 py-6'>
+    <header className='fixed inset-x-0 top-0 z-50 bg-card/85 py-6'>
       <nav className='container flex max-w-4xl items-center justify-between'>
         {/* Logo */}
         <div>
           <Link
             href={'/'}
+            className='text-bold font-serif text-xl text-muted-foreground hover:text-card-foreground'
             className='text-bold font-serif text-xl text-muted-foreground hover:text-card-foreground'
           >
             C.Tao
