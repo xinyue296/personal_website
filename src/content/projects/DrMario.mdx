@@ -13,9 +13,13 @@ I remade Dr. Mario in MIPS assembly, running on a 64 by 64 bitmap display with k
 
 ## Playing it
 
-![The game running in the MARS bitmap display, showing the pill bottle, four viruses and the next capsule waiting at the side](/assets/projects/DrMario.png)
+![The start menu, reading n-Start and q-Quit in hand-drawn pixel lettering on a blue background](/assets/projects/drmario/menu.png)
 
 The game opens on a start menu. Press **n** to start and **q** to quit. Capsules drop from the neck of the pill bottle, and you steer them with **a** and **d**, rotate with **w**, and push them down with **s**. Line up four of the same colour in a row or column to clear them, and anything left unsupported falls into place. Clear all four viruses to win. Block the neck of the bottle and it is game over, with an option to retry.
+
+![The full game board, with the pill bottle in the middle, the three virus sprites down the left side, the capsule queue along the shelf and pixel-art Dr. Mario filling the right panel](/assets/projects/drmario/cleared.png)
+
+Everything on that screen is drawn by hand. The bottle, the viruses, the queue along the shelf, and the doctor on the right are all rectangles and lines written to memory addresses.
 
 ## Beyond the required milestones
 
@@ -28,15 +32,22 @@ On top of the core game I added eight features.
 - A side panel previewing the next capsule.
 - A preview queue of the next five capsules.
 - Pixel-art Dr. Mario and viruses on the side panels, drawn pixel by pixel.
+- Hold a capsule with **k** and bring it back later.
+
+![The board paused, with two white bars in the top left corner, one move before a four-in-a-column clear](/assets/projects/drmario/paused.png)
+![The same board with a red capsule half parked in the hold slot in the top left corner](/assets/projects/drmario/hold.png)
+
+Paused one move before a four-in-a-column clear, and a capsule parked in the hold slot.
 
 ![Pixel-art Dr. Mario in a white coat with brown hair and brown shoes, drawn on a 32 by 32 grid](/assets/projects/DrMario-pixelart.png)
 
 That sprite is not an image file. It is 82 draw calls in assembly, each one a line or a rectangle at coordinates I worked out on grid paper first, in colours defined by hand at the top of the program.
-- Hold a capsule with **k** and bring it back later.
 
 ## How I built it
 
 Before writing any assembly, I sketched the whole screen on grid paper, with the bottle's exact dimensions, where each panel sits, and the four rotation states of a capsule. In assembly, every coordinate turns into an address calculation, so having the layout on paper first gave me exact numbers to work from.
+
+![Grid paper sketch of the screen layout, with the bottle measured out in squares and the four rotation states of a capsule drawn beside it](/assets/projects/drmario/plan.jpg)
 
 The game runs as a frame loop. Each frame reads the keyboard, applies the move, advances a gravity counter, checks for matches, and redraws the board. The board lives in memory as a grid, so collision checks, clears, and the cascading drops are all loops over that grid.
 
