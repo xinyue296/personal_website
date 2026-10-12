@@ -1,12 +1,17 @@
 import Home from "@/app/home/page";
+import About from "./about/page";
+import Projects from "./projects/page";
+import Resume from "./resume/page";
+import Contact from "./contact/page";
 
 export default function App() {
   return (
-    // <main className="flex min-h-screen flex-row items-center justify-between p-24">
-    //   <p className="font-['La_Belle_Aurore'] text-6xl">Cindy.T</p>
-    // </main>
     <main>    
       <Home />
+      <About />
+      <Projects />
+      <Resume />
+      <Contact />
     </main>
   );
 }
