@@ -34,7 +34,7 @@ export default async function BlogPage() {
               <li key={post.slug}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className='group block rounded-xl border border-muted bg-card/40 p-6 transition-colors hover:border-cyan-600/50'
+                  className='group block rounded-xl border border-border bg-card/40 p-6 transition-colors hover:border-cyan-600/50 dark:border-muted'
                 >
                   <h2 className='font-serif text-xl font-semibold text-foreground transition-colors group-hover:text-cyan-600'>
                     {post.title}

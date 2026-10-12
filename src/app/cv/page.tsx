@@ -27,7 +27,7 @@ export default async function CVPage() {
         <Breadcrumbs items={[{ label: 'Main', href: '/' }, { label: 'CV' }]} />
 
         {/* CV Render */}
-        <main className='prose mt-8 max-w-none rounded-2xl border border-muted bg-card p-8 shadow-sm dark:prose-invert'>
+        <main className='prose mt-8 max-w-none rounded-2xl border border-border bg-card p-8 shadow-sm dark:prose-invert dark:border-muted'>
           <MDXContent source={cvContent} />
         </main>
       </div>

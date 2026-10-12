@@ -24,7 +24,7 @@ export default function Projects({
                 />
               </div>
             ) : (
-              <div className='flex h-64 w-full items-center justify-center overflow-hidden rounded-xl border border-muted bg-gradient-to-br from-muted/60 to-background px-6 sm:h-48'>
+              <div className='flex h-64 w-full items-center justify-center overflow-hidden rounded-xl border border-border bg-gradient-to-br from-secondary to-muted px-6 dark:border-muted dark:from-muted/60 dark:to-background sm:h-48'>
                 <span className='text-center font-serif text-2xl font-semibold text-cyan-600'>
                   {project.title}
                 </span>

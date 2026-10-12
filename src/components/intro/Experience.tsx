@@ -32,7 +32,7 @@ export default function Experience() {
   return (
     <section className='pb-12'>
       <h2 className='subtitle mb-8'>Experience</h2>
-      <div className='relative ml-2 flex flex-col gap-12 border-l border-muted pl-6 sm:ml-4'>
+      <div className='relative ml-2 flex flex-col gap-12 border-l border-border pl-6 dark:border-muted sm:ml-4'>
         {experiences.map((exp, index) => (
           <div key={index} className='group relative'>
             <div className='mb-2 flex flex-col gap-1 md:flex-row md:items-start md:justify-between'>
@@ -57,7 +57,7 @@ export default function Experience() {
                   <span>{exp.location}</span>
                 </div>
               </div>
-              <span className='w-fit rounded-full border border-muted bg-muted/30 px-2.5 py-1 text-xs font-light text-muted-foreground md:mt-1'>
+              <span className='w-fit rounded-full border border-border bg-muted px-2.5 py-1 text-xs font-light text-muted-foreground dark:border-muted dark:bg-muted/30 md:mt-1'>
                 {exp.period}
               </span>
             </div>
