@@ -17,13 +17,13 @@ const experiences: ExperienceItem[] = [
     period: 'May 2025 \u2013 Aug. 2026',
     link: 'https://tetradg.com',
     description: [
-      'Scaled a data export pipeline that had outgrown its original design, moving it to paginated, parallel, queue-backed processing on AWS Lambda, Step Functions, and SQS.',
-      'Benchmarked that pipeline under rising concurrency to find where parallelism stopped paying off, then sized the worker pool to the real constraint instead of a guess.',
-      'Investigated data-consistency issues down to their root causes with throwaway triage scripts, and proposed a longer-term redesign.',
-      'Automated a monthly billing workflow for the finance team, starting from how they actually worked rather than the written spec, and following up with them after release to plan what came next.',
-      'Migrated an operations workflow from a legacy platform to a new one, owning the internal-facing side across backend services and a React UI.',
-      'Built parts of an event-driven audit service in Go on NATS JetStream so two platforms could share one audit trail.',
-      'Led hiring for the next co-op with my manager and helped mentor the new hire.'
+      'Scaled a data export pipeline to paginated, parallel, queue-backed processing on AWS Lambda, Step Functions, and SQS.',
+      'Benchmarked it under rising concurrency and sized the worker pool to the real bottleneck.',
+      'Traced data-consistency issues to their root cause and proposed a longer-term redesign.',
+      'Automated monthly billing for the finance team, built around how they actually worked.',
+      'Migrated an operations workflow to a new platform, owning backend services and a React UI.',
+      'Built parts of an event-driven audit service in Go on NATS JetStream.',
+      'Led hiring for the next co-op with my manager, and helped mentor the new hire.'
     ]
   }
 ]
