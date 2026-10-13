@@ -104,12 +104,12 @@ const About = () => {
         </div>
 
         {/* Experience Timeline */}
-        <div className='my-8'>
+        <div className='mt-8'>
           <Experience />
         </div>
         <Link
           href='/cv'
-          className='-mt-8 mb-8 inline-flex items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors hover:text-foreground'
+          className='-mt-4 mb-8 inline-flex items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors hover:text-foreground'
         >
           <span>Check my full CV</span>
         </Link>
@@ -147,10 +147,9 @@ const About = () => {
           <h2 className='sectitle text-primary'>Outside work</h2>
           <p className='my-2 font-normal text-muted-foreground'>
             This past season I paddled with NDUC, a UofT dragon boat team,
-            training three times a week and competing at the Toronto Islands
-            regatta and the Can-Am Cup in Montreal. I joined to stay active and
-            meet new people, and it ended up being one of the best parts of my
-            year.
+            competing at the Toronto Islands regatta and the Can-Am Cup in
+            Montreal. I joined to stay active and meet new people, and it ended
+            up being one of the best parts of my year.
           </p>
           <p className='my-2 font-normal text-muted-foreground'>
             I also sang with the Hart House Singers for a couple of semesters.

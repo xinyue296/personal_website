@@ -169,9 +169,12 @@
   .prose h2,
   .prose h3,
   .prose ul,
-  .prose strong,
   .prose a {
-    @apply text-foreground; /* Adjust for normal mode */
+    @apply text-foreground;
+  }
+
+  .prose strong {
+    @apply font-extrabold text-foreground;
   }
 
   .prose a {

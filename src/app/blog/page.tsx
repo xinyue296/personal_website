@@ -21,7 +21,7 @@ export default async function BlogPage() {
         />
         <h1 className='title mb-4'>Blog</h1>
         <p className='mb-12 max-w-2xl font-light text-muted-foreground'>
-          Notes on the things I build and what they taught me.
+          Things I found interesting along the way.
         </p>
 
         {posts.length === 0 ? (
