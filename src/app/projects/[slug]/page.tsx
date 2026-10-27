@@ -46,7 +46,7 @@ export default async function Project({
   }
 
   const { metadata, content } = project
-  const { title, image, author, publishedAt, pixelated } = metadata
+  const { title, image, author, publishedAt, updatedAt, pixelated } = metadata
 
   return (
     <section className='py-24'>
@@ -75,6 +75,9 @@ export default async function Project({
           <h1 className='title'>{title}</h1>
           <p className='mt-3 text-xs text-muted-foreground'>
             {author} / {formatDate(publishedAt ?? '')}
+            {updatedAt && updatedAt !== publishedAt && (
+              <> · Last updated {formatDate(updatedAt)}</>
+            )}
           </p>
         </header>
 
