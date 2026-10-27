@@ -4,6 +4,7 @@
   author: 'Cindy Tao'
   noindex: true
   publishedAt: '2026-10-01'
+  updatedAt: '2026-10-27'
 ---
 
 *In progress. ML engineering capstone, University of Toronto, Fall 2026.*
@@ -20,10 +21,16 @@ Two things stood out. The most common failure is omission, something the visit c
 
 That second gap is the one we are building into.
 
-## Where it stands
+## What I built
 
-We are at the research and planning stage. My part so far is the landscape work, and next I am helping shape the dataset and the evaluation pipeline.
+After the landscape work, my part moved to the data platform the rest of the pipeline stands on.
+
+- **A data lake and warehouse.** I designed a medallion-style layout in S3, with raw, cleaned, and model-ready zones, and a PostgreSQL warehouse beside it. A Python loader checks each batch against its manifest, sets bad rows aside instead of failing the whole load, and writes through least-privilege database roles. My teammates built their stages on top of this design.
+- **Infrastructure and CI.** I reworked the team's Terraform so both data pipelines run on ECS Fargate in separate dev and prod environments, and set up GitHub Actions to run migrations and the test suite on every pull request.
+- **A disaster-recovery drill.** I planned and ran a recovery drill that rebuilt the production stack from Terraform and a database snapshot, to prove we could get working services back without losing data.
+- **One shared generator library.** The benchmark and the live app each had their own way of generating data. I merged them into one Python library with local and cloud runners, so both routes score notes with the same judge.
+- **The app's ingest worker.** I extended the app's SQS worker to move each job through the lake's zones, with dead-letter handling that marks failed jobs while keeping clinical text out of failure records.
 
 ## Stack
 
-Python. More to come once the pipeline is in place.
+Python, PostgreSQL, AWS (S3, ECS Fargate, SQS, RDS), Terraform, GitHub Actions.

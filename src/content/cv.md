@@ -15,10 +15,16 @@ to end from ambiguous requirements through production. Graduating May 2027.
 
 **University of Toronto**, Toronto, Canada  
 _Sep. 2023 – May 2027 (expected)_  
-Honours BSc, Computer Science and Statistics, ASIP Co-op
+Honours BSc, Computer Science and Statistics, ASIP Co-op  
+Dean's List Scholar (2024, 2025)
 
-**Coursework**: Computer Systems Programming, Operating Systems, Computer
-Architecture, Computer Networks, Machine Learning
+**Coursework**: Operating Systems, Computer Architecture, Computer Networks,
+Computer Systems Programming, Machine Learning, Neural Networks and Deep
+Learning, ML Engineering Capstone, Methods of Data Analysis
+
+**Waseda University**, Tokyo, Japan  
+_2021 – 2023_  
+Undergraduate studies in Economics (transferred)
 
 ---
 
@@ -33,13 +39,13 @@ cache-aware optimization, root-cause debugging, Linux
 **Backend:** Node.js, Express, Fastify, REST APIs, OpenAPI, Zod, PostgreSQL,
 NATS JetStream, event-driven architecture, idempotency, RBAC
 
-**Infra & Cloud:** AWS (Lambda, Step Functions, SQS, S3, ECS, EC2, RDS, IAM,
-CloudWatch), Terraform, Docker, Kubernetes, CI/CD
+**Infra & Cloud:** AWS (Lambda, Step Functions, SQS, S3, SES, ECS, EC2, RDS,
+IAM, CloudWatch), Terraform, Docker, Kubernetes, GitHub Actions, CI/CD
 
 **Frontend:** React, Next.js, Tailwind CSS, Figma, responsive design
 
-**AI/ML:** LangGraph, RAG, ChromaDB, evaluation dataset design, statistical
-modelling
+**AI/ML:** LangGraph, agent evaluation, evaluation dataset design, RAG,
+statistical modelling
 
 ---
 
@@ -55,13 +61,15 @@ TypeScript, Go, PostgreSQL, AWS, Terraform._
   finance, and compliance teams by building internal tools and backend services,
   shipping across cycled Agile releases tracked in Jira and Confluence.
 - Designed and scaled a CSV export pipeline that had outgrown its original
-  design, replacing offset pagination with keyset pagination and splitting each
-  export into resumable parallel partitions, then benchmarked the workers under
-  rising concurrency, traced the bottleneck to worker compute, and sized a
-  configurable SQS worker pool to keep exports stable under congestion.
+  design, replacing offset pagination with keyset pagination and resumable parallel
+  workers behind a configurable SQS admission queue that protects the shared
+  database under traffic congestion.
+- Benchmarked the parallel export workers under rising concurrency, traced the
+  bottleneck to worker compute, and sized the SQS worker pool to the database
+  and compute budget to keep exports stable.
 - Built Python triage scripts to find why end-of-day balances drifted, diffing
-  on-chain transactions against platform records to classify the failures and
-  trace them to root cause, shaping a redesign for the team's planned refactor.
+  on-chain transactions against platform records to trace the discrepancies to
+  root cause, shaping a redesign for the team's planned refactor.
 - Migrated Bitcoin raw-signing operations to a new platform, owning the
   operations side across service, API, and React UI, and shipped the first
   release on schedule as ops moved off the legacy workflow.
@@ -74,34 +82,58 @@ TypeScript, Go, PostgreSQL, AWS, Terraform._
 - Unified two platforms' separate audit trails into one append-only PostgreSQL
   store via an event-driven Go service on NATS JetStream, migrating every audit
   method by dual-write with zero call-site changes.
+- Led hiring for the next co-op with my manager, from screening through the
+  interview day, then co-mentored the hire through daily check-ins and weekly
+  1:1s.
 
 ---
 
 ## Projects
 
-**ChartProof, AI Scribe Accuracy Auditor** · Python · Sep. 2026 – Present
+**ChartProof, AI Scribe Accuracy Auditor** · Python, PostgreSQL, AWS,
+Terraform · Sep. 2026 – Present
 
 - Researched and authored the product landscape for an ML-based auditor of
   AI-generated clinical notes, surveying commercial AI scribes, evaluation
   frameworks, and error studies to find where an independent detector adds
   value.
-- Planned the team's ML pipeline for detecting scribe errors in multilingual and
-  multi-speaker visits, comparing candidate models on accuracy, latency, and
-  cost over a purpose-built evaluation set.
+- Architected a medallion-style S3 data lake (bronze, silver, gold) and
+  PostgreSQL warehouse, plus a Python loader that checks each batch against its
+  manifest, quarantines bad rows, and writes through least-privilege roles.
+- Reworked the team's Terraform to run both data pipelines on ECS Fargate across
+  dev and prod, and set up GitHub Actions CI that runs migrations and the test
+  suite on every pull request.
+- Ran a disaster-recovery drill that rebuilt the
+  Terraform-managed production stack from an RDS snapshot, restoring working
+  services with no data loss.
+- Unified the data generators into one shared Python library with local and
+  cloud runners, so the benchmark and the live app score notes with the same
+  judge.
 
-**AI Marketing Agent** · Python, LangGraph, ChromaDB · Aug. 2026 – Present
+**AI Marketing Agent** · Python, LangGraph, OpenAI API, Pydantic, pytest ·
+Aug. 2026 – Present
 
-- Led product and evaluation design for a multi-tenant agentic RAG platform
-  where a LangGraph supervisor routes research, strategy, and copywriting agents
-  over per-tenant ChromaDB indexes.
-- Built an evaluation harness that scores each agent-workflow change on
-  retrieval relevance and tests that RBAC filters never leak restricted
-  documents across tenants or clearance tiers.
+- Led experiments comparing the LangGraph multi-agent supervisor with a simpler
+  single-loop agent on outcome checks and token cost, and proposed a plan to
+  move to the simpler design.
+- Defined a memory eval comparing preferences learned from reviewer edits with
+  automatically extracted ones, which made better automatic capture the next
+  priority.
+
+**Cache Sensitivity Study (gem5)** · Computer Architecture course · Jan. – Apr.
+2025
+
+- Characterized how cache configuration drives performance on Problem Based
+  Benchmark Suite workloads by sweeping L1/L2 size (8–64 KB) and associativity
+  (1–8 way) on a simulated in-order CPU.
+- Found pointer-chasing BFS and hash-based deduplication far more sensitive to
+  cache size and associativity than array-based sorting, and traced the gap to
+  spatial locality and instruction footprint.
 
 **Dr. Mario, falling-block puzzle game** · MIPS assembly · Oct. 2024 – Dec. 2024
 
-- Built a playable Dr. Mario game in MIPS assembly, driving a memory-mapped
-  bitmap display and keyboard from a frame-based game loop.
+- Built a playable Dr. Mario game in about 3,000 lines of MIPS assembly,
+  driving a memory-mapped bitmap display and keyboard from a frame-based game loop.
 - Implemented gravity that speeds up over time, pause and resume, capsule hold,
   and a five-capsule preview queue, managing every register and stack frame by
   hand.
@@ -112,8 +144,7 @@ TypeScript, Go, PostgreSQL, AWS, Terraform._
   works around Discord's embed size limit.
 - Deployed the bot on AWS EC2 with PM2 and automated its releases through GitHub
   webhooks.
-- Organized weekly meetings and wrote the git workflow and hosting docs for our
-  four-person team.
+- Organized weekly meetings and wrote the team's git workflow and hosting docs.
 
 **[WasedaTime](https://wasedatime.com)** · Web Developer and PM · TypeScript,
 React, Tailwind · Feb. 2022 – Aug. 2023
@@ -129,5 +160,5 @@ React, Tailwind · Feb. 2022 – Aug. 2023
 ## Activities
 
 - Dragon boat racing with a Toronto team, competing at the Toronto Islands
-  regatta and the Can-Am Cup
+  regatta and the Can-Am Cup (2026)
 - Hart House Singers, University of Toronto

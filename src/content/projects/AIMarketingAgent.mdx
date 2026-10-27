@@ -1,8 +1,9 @@
 ---
   title: AI Marketing Agent
-  summary: A multi-tenant agentic RAG platform for marketing teams. I am building its evaluation harness.
+  summary: A multi-tenant agentic RAG platform for marketing teams. I lead its agent experiments and evals.
   author: 'Cindy Tao'
   publishedAt: '2026-10-01'
+  updatedAt: '2026-10-27'
 ---
 
 *In progress. This page grows as the work lands.*
@@ -15,15 +16,15 @@ A company's internal documents are split into chunks, embedded, and stored in a 
 
 When a user asks a question, a LangGraph supervisor decides which agent should act next. A researcher retrieves the documents that user is allowed to see, a strategist turns them into a plan, a copywriter drafts assets, and a brand reviewer sends weak copy back for another pass.
 
-## What I am building
+## What I work on
 
-The evaluation harness. Right now the system can be checked by hand, one query at a time. I want every change to be scored the same way, every time, on two questions.
+I design and direct the experiments that decide how the agent should be built, and define the evals that tell us whether a change helped.
 
-- **Does retrieval find the right documents?** Relevance scores on a fixed set of test queries per tenant.
-- **Does access control hold?** Tests that a lower-clearance user never receives a restricted document, at any step of the agent loop.
+- **Is the multi-agent supervisor worth it?** I led experiments comparing the LangGraph supervisor with a simpler single-loop agent, scoring both on outcome checks and token cost over a shared set of scenarios. The simpler agent held up well, so I proposed a plan to move to it, and we are now testing that more carefully before switching.
+- **Can the agent remember what a team likes?** I defined a memory eval that checks whether the agent follows a team's preferences. Preferences learned from a reviewer's edits worked much better than ones the agent extracted on its own, which made improving automatic capture our next priority.
 
-I picked this piece because the platform's whole promise depends on the second question. A marketing tool that leaks an M&A deck to an intern is worse than no tool at all.
+The lesson I keep relearning here is that a more elaborate agent design is a claim, and it needs an experiment behind it like any other claim.
 
 ## Stack
 
-Python, LangGraph, ChromaDB, OpenAI embeddings.
+Python, LangGraph, OpenAI API, Pydantic, pytest.

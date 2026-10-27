@@ -15,6 +15,8 @@ export type ProjectMetadata = {
   image?: string
   author?: string
   publishedAt?: string
+  /** Last substantive edit. Leave it alone for typo-sized fixes. */
+  updatedAt?: string
   /** Set in frontmatter to keep a project out of search results. */
   noindex?: boolean
   /** Pixel art. Skips image optimization so the pixels stay crisp. */
@@ -36,7 +38,9 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 
 export async function getProjects(limit?: number): Promise<ProjectMetadata[]> {
   try {
-    const files = await fs.readdir(rootDirectory)
+    const files = (await fs.readdir(rootDirectory)).filter(f =>
+      f.endsWith('.mdx')
+    )
 
     const projects = await Promise.all(
       files.map(async file => getProjectMetadata(file))
